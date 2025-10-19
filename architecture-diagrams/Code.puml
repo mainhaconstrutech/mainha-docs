@@ -1,0 +1,43 @@
+@startuml BibliotecaCodigo
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+class Project {
+  - Integer id
+  - String name
+  - String description
+  - String status
+  - Integer standard_id
+  - String file_name
+  - Datetime created_at
+  - Datetime updated_at
+}
+
+class Standard {
+  - Integer id
+  - String name
+  - String description
+  - String file_name
+  - Datetime created_at
+  - Datetime updated_at
+}
+
+class Rule {
+  - Integer id
+  - Integer standard_id
+  - String name
+  - String description
+  - Datetime created_at
+  - Datetime updated_at
+}
+
+class Validation {
+  - Integer id
+  - Integer project_id
+  - Integer rule_id
+  - Boolean status
+  - String notes
+  - Datetime created_at
+  - Datetime updated_at
+}
+
+@enduml

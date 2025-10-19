@@ -1,0 +1,15 @@
+@startuml MainhaComponent
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Container(api, "Aplicação Web", "Django", "Aplicação SSR do projeto") {
+    Component(view, "View", "Controlador Django MTV", "Recebe requisições HTTP")
+    Component(service, "Serviço", "Classe de Serviço", "Contém regras de negócio")
+    Component(orm, "ORM", "Django ORM", "Gerencia operações de banco de dados")
+}
+
+UpdateRelStyle(black, black)
+
+Rel(view, service, "Chamada de Métodos")
+Rel(service, orm, "Consulta ao Banco de Dados")
+
+@enduml

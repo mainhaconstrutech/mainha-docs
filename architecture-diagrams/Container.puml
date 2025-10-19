@@ -1,0 +1,17 @@
+@startuml MainhaContainer
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person_Ext(user, "Usuário", "Usuário regular do sistema")
+Person_Ext(admin, "Administrador", "Usuário administrador que pode alterar configurações e manipular processos")
+
+Container(mainhaApp, "Aplicação Web", "Django", "Aplicação SSR do projeto")
+
+ContainerDb(database, "Banco de Dados", "PostgreSQL", "Armazena informações do sistema")
+ContainerDb(databaseBlob, "Armazenamento de Objetos", "S3", "Armazena objetos de grande volume de dados")
+
+Rel(user, mainhaApp, "Usa", "HTTP")
+Rel(admin, mainhaApp, "Configura", "HTTP")
+Rel(mainhaApp, database, "Consulta", "SQL")
+Rel(mainhaApp, databaseBlob, "Armazena", "HTTPS")
+
+@enduml

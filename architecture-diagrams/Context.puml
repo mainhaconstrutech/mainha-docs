@@ -1,0 +1,16 @@
+@startuml MainhaContext
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+Person(user, "Usuário", "Usuário regular do sistema")
+Person(admin, "Administrador", "Usuário administrador que pode alterar configurações e manipular processos")
+
+System(mainhaSystem, "Sistema de Gestão de projetos", "Sistema que gerencia a adequação de projetos estruturais")
+System_Ext(geminiIASystem, "Gemini IA", "IA externa de processamento das normas")
+System_Ext(gptIASystem, "GPT IA", "IA externa de processamento das normas")
+
+Rel(user, mainhaSystem, "Usa", "HTTP")
+Rel(admin, mainhaSystem, "Configura", "HTTP")
+Rel(mainhaSystem, geminiIASystem, "Processa arquivos", "HTTP")
+Rel(mainhaSystem, gptIASystem, "Processa arquivos", "HTTP")
+
+@enduml
