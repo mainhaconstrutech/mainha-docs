@@ -1,2 +1,2 @@
-# mainha-docs
+# Mainhã Docs
 Documentações do projeto MAINHÃ
