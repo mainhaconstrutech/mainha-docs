@@ -1,6 +1,10 @@
 # Mainhã Docs
 Documentações do projeto MAINHÃ
 
+
+## Diagramas ER
+<img width="2478" height="2100" alt="Diagrama ER - Mainha" src="https://github.com/user-attachments/assets/13ea1af7-12a2-41f4-ac8f-a3bdab433cbf" />
+
 ## Diagramas da arquitetura do sistema (C4 Model)
 
 #### Diagrama de contexto
