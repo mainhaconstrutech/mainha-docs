@@ -2,42 +2,64 @@
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
 class Project {
-  - Integer id
-  - String name
-  - String description
-  - String status
-  - Integer standard_id
-  - String file_name
-  - Datetime created_at
-  - Datetime updated_at
+  +id:  Integer
+  +name:  String
+  +description:  String
+  +status:  String
+  +standard_id:  Integer
+  +file_name:  String
+  +created_at:  Datetime
+  +updated_at:  Datetime
 }
 
 class Standard {
-  - Integer id
-  - String name
-  - String description
-  - String file_name
-  - Datetime created_at
-  - Datetime updated_at
+  +id:  Integer
+  +name:  String
+  +description:  String
+  +file_name:  String
+  +created_at:  Datetime
+  +updated_at:  Datetime
 }
 
 class Rule {
-  - Integer id
-  - Integer standard_id
-  - String name
-  - String description
-  - Datetime created_at
-  - Datetime updated_at
+  +id:  Integer
+  +standard_id:  Integer
+  +name:  String
+  +description:  String
+  +created_at:  Datetime
+  +updated_at:  Datetime
 }
 
 class Validation {
-  - Integer id
-  - Integer project_id
-  - Integer rule_id
-  - Boolean status
-  - String notes
-  - Datetime created_at
-  - Datetime updated_at
+  +id:  Integer
+  +project_id:  Integer
+  +rule_id:  Integer
+  +status:  Boolean
+  +notes:  String
+  +created_at:  Datetime
+  +updated_at:  Datetime
+}
+
+class Account {
+  +id:  Integer
+  +name:  String
+  +cnpj:  String
+  +email:  String
+  +active:  Boolean 
+  +subscription:  String
+  +created_at:  Datetime
+  +updated_at:  Datetime
+}
+
+class UserAccount {
+  +id:  Integer
+  +user_id:  Integer
+  +account_id:  Integer
+  +active:  Boolean
+  +role:  String
+  +responsibility_value:  Integer
+  +created_at:  Datetime
+  +updated_at:  Datetime
 }
 
 @enduml
